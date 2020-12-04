@@ -25,11 +25,15 @@ class CrudController extends Controller
     // Show form method
     public function createCrudData(Request $value)
     {
-    	return $value->all();
-    	// echo $value->name;
-    	// echo $value->input('name');
-    	// echo $value->get('name');
+    	Crud::create([
 
+    		'name'	=>$value->name,
+    		'email'	=>$value->email,
+    		'cell'	=>$value->cell,
+    		'uname'	=>$value->uname
+    		
+
+    	]);
     }
 
 
