@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Model\Crud;
 
 class CrudController extends Controller
 {
@@ -22,7 +23,7 @@ class CrudController extends Controller
     }
 
     // Show form method
-    public function create(Request $value)
+    public function createCrudData(Request $value)
     {
     	return $value->all();
     	// echo $value->name;

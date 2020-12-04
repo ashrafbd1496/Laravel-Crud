@@ -19,6 +19,6 @@ Route::get('crud-all','CrudController@showData');
 
 
 //Post route 
-Route::post('crud-add','CrudController@create');
+Route::post('crud-add','CrudController@createCrudData');
 
 
