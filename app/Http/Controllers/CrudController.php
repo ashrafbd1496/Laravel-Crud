@@ -8,14 +8,11 @@ use App\Models\Model\Crud;
 class CrudController extends Controller
 {
 
-
-
 	// Show form method
     public function showForm()
     {
     	return view('crud.index');
     }
-
 
     // Show form method
     public function createCrudData(Request $value)
@@ -51,7 +48,6 @@ class CrudController extends Controller
         }
 
 
-
     	//Create New Student
     	Crud::create([
 
@@ -66,13 +62,18 @@ class CrudController extends Controller
     	//Redirection
     	return redirect()->back()->with('success', 'Student Added Successful');
 
-    }//end of the funciton
+    }//end of the funciton createCrudData
 
 
     // Show all student data
     public function showData()
     {
-        return view('crud.all');
+        //        $all_students = Crud::latest() ->get();   //It will show latest data as descending order
+
+        $all_students = Crud::all();    // it will show all data as ascending order
+        return view('crud.all',[
+            'students'  =>$all_students,
+        ]);
     }
 
 }//end of the class
