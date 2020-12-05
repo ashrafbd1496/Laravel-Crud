@@ -17,6 +17,7 @@
 		<div class="card shadow">
 			<div class="card-body">
 				<h2>All Data</h2>
+                @include('validation')
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -30,7 +31,7 @@
 					</thead>
 					<tbody>
 
-                    @foreach($all_students as $student)
+                    @foreach($students as $student)
 
 						<tr>
 							<td>{{$loop -> index + 1}}</td>
