@@ -40,7 +40,7 @@
 							<td>{{$student->cell}}</td>
 							<td><img src="{{URL::to('media/students') .'/'.  $student->photo}}" alt=""></td>
 							<td>
-								<a class="btn btn-sm btn-info" href="#">View</a>
+								<a class="btn btn-sm btn-info" href="{{url('crud-single/' . $student->id)}}">View</a>
 								<a class="btn btn-sm btn-warning" href="#">Edit</a>
 								<a class="btn btn-sm btn-danger" href="#">Delete</a>
 							</td>

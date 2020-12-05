@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 //Student Route
 Route::get('crud-app','CrudController@showForm');
 Route::get('crud-all','CrudController@showData');
+Route::get('crud-single/{id}','CrudController@showSingleData');
+
 
 
 //Post route

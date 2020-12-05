@@ -75,5 +75,18 @@ class CrudController extends Controller
             'students'  =>$all_students,
         ]);
     }
+    /*
+     * Show single data
+     */
+    function showSingleData($id){
+       $student = Crud::find($id);
+        return view('Crud.show',[
+            'single_student'   =>$student,
+        ]);
+    }
+
+
+
+
 
 }//end of the class
