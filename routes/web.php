@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Student Route
 Route::get('crud-app','CrudController@showForm');
 Route::get('crud-all','CrudController@showData');
 
 
-//Post route 
+//Post route
 Route::post('crud-add','CrudController@createCrudData');
 
 

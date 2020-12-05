@@ -18,10 +18,7 @@
 			<div class="card-body">
 				<h2>Sign Up</h2>
 
-				@if($errors ->any())
-				<p class="alert alert-danger">{{$errors ->first() }}<button class="close" data-dismiss="alert">&times;</button></p>
-				@endif
-
+				@include('validation')
 
 				<form action="{{url('crud-add')}}" method="POST" enctype="multipart/form-data">
 

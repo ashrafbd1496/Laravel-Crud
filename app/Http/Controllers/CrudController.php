@@ -16,11 +16,6 @@ class CrudController extends Controller
     	return view('crud.index');
     }
 
-    // Show form method
-    public function showData()
-    {
-    	return view('crud.all');
-    }
 
     // Show form method
     public function createCrudData(Request $value)
@@ -41,27 +36,43 @@ class CrudController extends Controller
 
     	]);
 
+    	/**
+    	 *Image Upload system
+    	 */
+
+    	if ($value ->hasFile('photo')){
+
+            $image = $value->file('photo');
+            $photo_name = md5(time().rand()) .'.'. $image->getClientOriginalExtension();
+            $image ->move(public_path('media/students/'), $photo_name);
+
+        }else{
+    	    $photo_name = '';
+        }
 
 
+
+    	//Create New Student
     	Crud::create([
 
-    		'name'	=>$value->name,
-    		'email'	=>$value->email,
-    		'cell'	=>$value->cell,
-    		'uname'	=>$value->uname
-    		
+    		'name'	=> $value -> name,
+    		'email'	=> $value -> email,
+    		'cell'	=> $value -> cell,
+    		'uname'	=> $value -> uname,
+    		'photo'	=> $photo_name,
+
     	]);
 
     	//Redirection
-    	return redirect()->back();
-
+    	return redirect()->back()->with('success', 'Student Added Successful');
 
     }//end of the funciton
 
 
-
-
-
-
+    // Show all student data
+    public function showData()
+    {
+        return view('crud.all');
+    }
 
 }//end of the class
