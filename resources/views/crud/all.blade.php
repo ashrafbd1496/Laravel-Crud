@@ -30,7 +30,7 @@
 					</thead>
 					<tbody>
 
-                    @foreach($students as $student)
+                    @foreach($all_students as $student)
 
 						<tr>
 							<td>{{$loop -> index + 1}}</td>

@@ -71,9 +71,7 @@ class CrudController extends Controller
         //        $all_students = Crud::latest() ->get();   //It will show latest data as descending order
 
         $all_students = Crud::all();    // it will show all data as ascending order
-        return view('crud.all',[
-            'students'  =>$all_students,
-        ]);
+        return view('crud.all',compact('all_students'));
     }
 
 }//end of the class
