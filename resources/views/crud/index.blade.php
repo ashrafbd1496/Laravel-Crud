@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="crud/assets/css/responsive.css">
 </head>
 <body>
-	
-	
+
+
 
 	<div class="wrap ">
 		<a class="btn btn-sm btn-primary" href="{{url('crud-all')}}">All Data</a>
@@ -26,19 +26,19 @@
 
 					<div class="form-group">
 						<label for="">Name</label>
-						<input name="name" class="form-control" type="text">
+						<input name="name" class="form-control" type="text" value="{{old('name')}}">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input name="email" class="form-control" type="text">
+						<input name="email" class="form-control" type="text" value="{{old('email')}}">
 					</div>
 					<div class="form-group">
 						<label for="">Cell</label>
-						<input name="cell" class="form-control" type="text">
+						<input name="cell" class="form-control" type="text" value="{{old('cell')}}">
 					</div>
 					<div class="form-group">
 						<label for="">Username</label>
-						<input name="uname" class="form-control" type="text">
+						<input name="uname" class="form-control" type="text" value="{{old('uname')}}">
 					</div>
 					<div class="form-group">
 						<label for="">Photo</label>
@@ -55,7 +55,7 @@
 	<br>
 	<br>
 	<br>
-	
+
 
 
 
