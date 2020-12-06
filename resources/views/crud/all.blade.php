@@ -41,8 +41,8 @@
 							<td><img src="{{URL::to('media/students') .'/'.  $student->photo}}" alt=""></td>
 							<td>
 								<a class="btn btn-sm btn-info" href="{{url('crud-single/' . $student->id)}}">View</a>
-								<a class="btn btn-sm btn-warning" href="#">Edit</a>
-								<a class="btn btn-sm btn-danger" href="#">Delete</a>
+								<a class="btn btn-sm btn-warning" href="{{url('crud-edit/' . $student->id)}}">Edit</a>
+								<a class="btn btn-sm btn-danger" href="{{url('crud-delete/' . $student->id)}}">Delete</a>
 							</td>
 						</tr>
                     @endforeach

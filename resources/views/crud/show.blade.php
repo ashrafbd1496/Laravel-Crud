@@ -17,7 +17,7 @@
     <div class="card shadow">
         <div class="card-body single-student">
             <img class="shadow" src="{{URL::to('/')}}/media/students/{{$single_student->photo}}" alt="">
-            <h2>Md Ashraf Uddin</h2>
+            <h2>{{$single_student->name}}</h2>
             <table class="table">
                 <tr>
                     <td>Name</td>

@@ -85,6 +85,26 @@ class CrudController extends Controller
         ]);
     }
 
+    /*
+    * delete single data
+    */
+    function deleteSingleData($id){
+        $delete_student = Crud::find($id);
+        $delete_student -> delete();
+        return redirect() ->back() -> with('success', 'student data deleted successful');
+
+    }
+
+    /*
+    * Edit single data
+    */
+    function editSingleData($id){
+        $edit_student = Crud::find($id);
+        return view('crud.edit',[
+            'edit_student'  =>$edit_student,
+        ]);
+
+    }
 
 
 
