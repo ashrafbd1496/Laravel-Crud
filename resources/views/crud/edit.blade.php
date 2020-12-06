@@ -20,7 +20,7 @@
 
             @include('validation')
 
-            <form action="{{url('crud-add')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('crud-update/' . $edit_student ->id)}}" method="POST" enctype="multipart/form-data">
 
                 @csrf
 

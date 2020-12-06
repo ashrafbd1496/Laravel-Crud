@@ -19,6 +19,7 @@ Route::get('crud-all','CrudController@showData');
 Route::get('crud-single/{id}','CrudController@showSingleData');
 Route::get('crud-delete/{id}','CrudController@deleteSingleData');
 Route::get('crud-edit/{id}','CrudController@editSingleData');
+Route::post('crud-update/{id}','CrudController@updateSingleData');
 
 
 

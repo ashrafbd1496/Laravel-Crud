@@ -106,6 +106,33 @@ class CrudController extends Controller
 
     }
 
+    /*
+  * Update single data
+  */
+    function updateSingleData(Request $request, $id){
+
+     $update_data = Crud::find($id);
+
+     if ($request->hasFile('new_photo')){
+
+         $image = $request->file('new_photo');
+         $photo_name = md5(time().rand()) .'.'. $image->getClientOriginalExtension();
+         $image ->move(public_path('media/students/'), $photo_name);
+         unlink('media/students/'. $request->old_photo);
+
+     }else{
+        $photo_name = $request->old_photo;
+     }
+
+     $update_data->name = $request->name;
+     $update_data->email = $request->email;
+     $update_data->cell = $request->cell;
+     $update_data->photo = $photo_name;
+     $update_data->update();
+     return redirect() ->back() -> with('success', 'student data Updated successful');
+
+    }
+
 
 
 
