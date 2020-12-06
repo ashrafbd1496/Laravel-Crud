@@ -24,7 +24,7 @@
 
                 @csrf
 
-                @method('PUT')
+                @method('PATCH')
 
                 <div class="form-group">
                     <label for="">Name</label>
