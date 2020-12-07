@@ -42,7 +42,12 @@
 							<td>
 								<a class="btn btn-sm btn-info" href="{{url('crud-single/' . $student->id)}}">View</a>
 								<a class="btn btn-sm btn-warning" href="{{url('crud-edit/' . $student->id)}}">Edit</a>
-								<a class="btn btn-sm btn-danger" href="{{url('crud-delete/' . $student->id)}}">Delete</a>
+                                <form style="display: inline-block" action="{{url('crud-delete/' . $student->id)}}" method="post">
+                                    @csrf
+                                    @method('Delete')
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+
+                                </form>
 							</td>
 						</tr>
                     @endforeach
